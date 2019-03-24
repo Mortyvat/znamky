@@ -3,8 +3,8 @@
 if(isset($_SESSION['login_user'])){
     ?>
 <ul>
-            <li><a href="registrace.php">REGISTRACE</a></li>
-            <li><a href="prihlasovani.php">PRIHLASOVANI</a></li>
+            <li><a href="index.php">Index</a></li>
+            <li><a href="nastaveni.php">Nastaveni</a></li>
 </ul>
 <?php 
 } 

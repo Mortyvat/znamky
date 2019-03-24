@@ -1,5 +1,7 @@
+<?php include "header.php" ?>
+
 <?php
-session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -13,19 +15,21 @@ session_start();
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
- 
+<?php include "prihlasovani.php" ?>
+<?php include "ovladaci panel.php"?>
 <div class="container">
 <div class="col-sm-6">
 
-<ul>
-            <li><a href="registrace.php">REGISTRACE</a></li>
-            <li><a href="prihlasovani.php">PRIHLASOVANI</a></li>
-</ul>
+
         <?php
         
 
         //if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-        echo "AHOJ ". $_SESSION['login_user'];
+            if(isset($_SESSION['login_user'])){
+
+                $hlaska = "AHOJ ". $_SESSION['login_user'].'<br>';
+            
+                }   
         /*}
         else 
         echo "nope".implode(" ",$_SESSION);*/

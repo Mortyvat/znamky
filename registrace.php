@@ -90,6 +90,7 @@ if(isset($_POST['register'])){
         <?php 
         echo $hlaska;
 
+        
         ?>
         
 

@@ -1,5 +1,5 @@
 <?php
-
+if()
 $connection = mysqli_connect('localhost', 'root', '', 'databaze');
 
 if($connection) {

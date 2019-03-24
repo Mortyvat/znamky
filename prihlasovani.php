@@ -4,6 +4,10 @@ if(isset($_SESSION['login_user'])){
 
     $hlaska = "AHOJ ". $_SESSION['login_user'].' demente <br>';
     echo $hlaska;
+
+    ?>
+    
+    <?php
     } else {  
 
     if(isset($_POST['login'])){

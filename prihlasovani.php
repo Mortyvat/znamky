@@ -1,12 +1,12 @@
 <?php
-
+include 'header.php';
 if(isset($_SESSION['login_user'])){
-
+    
     $hlaska = "AHOJ ". $_SESSION['login_user'].' demente <br>';
     echo $hlaska;
 
     ?>
-    
+
     <?php
     } else {  
 

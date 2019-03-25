@@ -1,9 +1,7 @@
 <?php
-include 'header.php';
 if(isset($_SESSION['login_user'])){
     
     $hlaska = "AHOJ ". $_SESSION['login_user'].' demente <br>';
-    echo $hlaska;
 
     ?>
 
@@ -75,7 +73,6 @@ if(isset($_SESSION['login_user'])){
         </div>
         <input class ="btn btn-primary" type="submit" name="login" value="Submit">
         <?php
-        echo $hlaska;
         
         ?>
         </form>

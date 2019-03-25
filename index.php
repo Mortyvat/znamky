@@ -15,20 +15,25 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-<?php include "prihlasovani.php" ?>
-<?php include "ovladaci panel.php"?>
+ 
+
 <div class="container">
 <div class="col-sm-6">
 
 
         <?php
+        include "prihlasovani.php";
+        include "welcome.php";
+        include "ovladaci panel.php";
         
 
         //if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             if(isset($_SESSION['login_user'])){
 
+                
                 $hlaska = "AHOJ ". $_SESSION['login_user'].'<br>';
-            
+                include "vypis_predmetu_studenta.php";
+                include "vypis_studentu_predmetu.php";
                 }   
         /*}
         else 

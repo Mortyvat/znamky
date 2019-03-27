@@ -1,6 +1,7 @@
-<?php include "header.php" ?>
+
 
 <?php
+include "header.php";
 
 ?>
 
@@ -28,10 +29,13 @@
         
 
         //if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+            
             if(isset($_SESSION['login_user'])){
 
                 
                 $hlaska = "AHOJ ". $_SESSION['login_user'].'<br>';
+                
+                
                 include "vypis_predmetu_studenta.php";
                 include "vypis_studentu_predmetu.php";
                 }   

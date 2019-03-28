@@ -1,6 +1,7 @@
 
 <?php 
-session_start();
+
+function Pristup();
 $username = '';
 $username =  $_SESSION['login_user'];
 echo $username;

@@ -26,8 +26,9 @@ if(isset($_POST['register'])){
         if (mysqli_fetch_row($result2)) {
             $hlaska .= "Přihlašovací jméno existuje". '<br>';
         } else {
-                $query = "INSERT INTO users(username, password) ";
-                $query .=  "VALUES ('$username', '$password')";
+                $access = $_POST['access'];
+                $query = "INSERT INTO users(username, password, access) ";
+                $query .=  "VALUES ('$username', '$password', '$access')";
         
                 $result = mysqli_query($connection, $query);
                 $hlaska .= "Účet vytvořen". '<br>';
@@ -86,7 +87,18 @@ if(isset($_POST['register'])){
         <label for="password2">Password2</label>
         <input type="password" name= "password2" class="form-control">
         </div>
+        <div class="form-group">
+        <select name="access">
+        <option value="1">Ucitel</option>
+        <option value="2">Student</option>
+        </div>
+        </select>
         <input class ="btn btn-primary" type="submit" name="register" value="Submit">
+
+        
+          
+
+    </form>
         <?php 
         echo $hlaska;
 

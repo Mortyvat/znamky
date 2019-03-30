@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $username = '';
 $username =  $_SESSION['login_user'];
 
@@ -11,7 +11,7 @@ if(!$connection) {
 
 } 
 
-$query = "SELECT users.username, classes.class FROM `users`, attending, classes WHERE users.username = '$username' and attending.id_student= users.id and attending.id_class = classes.id ";
+$query = "SELECT users.username, classes.class, znamky.date, znamky.mark FROM `users`, znamky, classes WHERE username = '$username' and znamky.id_student= users.id and znamky.id_class = classes.id ";
 
 $result = mysqli_query($connection, $query);
 
@@ -22,11 +22,11 @@ die('Query FAILED' . mysqli_error($connection));
 
 ?>
 
-<h5>Tvoje předměty</h5>
+<h5>Tvoje známky</h5>
 
 <?php
 
 while($row = mysqli_fetch_array($result)) {
-    echo $row[1] . '<br>';
+    echo $row[2] . " ". $row[1] . ' známka ' . $row[3] . '<br>';
 }
 ?>

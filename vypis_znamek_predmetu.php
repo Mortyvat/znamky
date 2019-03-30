@@ -5,7 +5,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'databaze');
 if(!$connection) {
     die("Database connection failed");
 } 
-$query = "SELECT users.username, classes.class FROM `users`, attending, classes WHERE  attending.id_student= users.id and attending.id_class = classes.id  ";
+$query = "SELECT users.username, classes.class, znamky.date, znamky.mark FROM `users`, znamky, classes WHERE  znamky.id_student= users.id and znamky.id_class = classes.id  ";
 $result = mysqli_query($connection, $query);
 if(!$result){
 die('Query FAILED' . mysqli_error($connection));
@@ -21,9 +21,11 @@ if(!$result){
    
 }
 while($row = mysqli_fetch_array($result)) {
-    echo $row[1] .' '.$row[0].'<br>';
+    echo $row[2] .' Student '.$row[0] .' dostal známku '.$row[3] .' z předmětu: '.$row[1] .'<br>';
     
 }
-//$query = "SELECT users.username, classes.class, znamky.date, znamky.mark FROM `users`, znamky, classes WHERE  znamky.id_student= users.id and znamky.id_class = classes.id  ";
+//
 
 ?>
+   
+

@@ -20,7 +20,8 @@ if(isset($_SESSION['login_user'])){
             $result = mysqli_query($connection, $query);
 
             if (mysqli_fetch_row($result)) {
-                
+                $row = mysqli_fetch_array($result);
+                $session2 = $_SESSION['login_id'] = $row[0]; 
                 $session =  $_SESSION['login_user']= $username;
                 //echo $session;
                 $hlaska .= "Přihlašovací údaje existují". '<br>';

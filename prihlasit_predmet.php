@@ -1,7 +1,13 @@
-<h3>Předměty k přihlášení</h3>
+<h3>Přihlašte si předmět</h3>
 <?php
 session_start();
+$hlaska = '';
 $username =  $_SESSION['login_user'];
+$id_studenta = $_SESSION['student_id'];
+$id_predmetu = $_POST['id'];
+echo $username. "<br>";
+echo $id_studenta. "<br>";
+echo $id_predmetu . "<br>";
 $connection = mysqli_connect('localhost', 'root', '', 'databaze');
 
 if(!$connection) {
@@ -10,27 +16,26 @@ if(!$connection) {
 
 }
 
-$query = "SELECT * FROM classes";
-$query2 = "SELECT users.username, classes.class, classes.id FROM `users`, attending, classes WHERE users.username = '$username' and attending.id_student= users.id and attending.id_class = classes.id ";
+
+/*$query = "SELECT users.username, classes.class, classes.id FROM `users`, attending, classes WHERE attending.id_student= users.id and attending.id_class = classes.id ";
 $result = mysqli_query($connection, $query);
-$result2 = mysqli_query($connection, $query2);
 if(!$result){
 
     die('Query FAILED' . mysqli_error());
    
 }
+$query3 = "SELECT users.id, FROM `users`, attending, classes WHERE username = '$username' ";
+$result = mysqli_query($connection, $query3);
+if(!$result){
 
-while($row = mysqli_fetch_array($result)) {
-
-        $row2 = mysqli_fetch_array($result2);
-
-        if(!($row[0]==$row2[2])){
-
-        echo $row[1];
-        echo '<br>';
-        }
-
-    
-}
+    die('Query FAILED' . mysqli_error());
+   
+}*/
+$query2 = "INSERT INTO attending(id_student, id_class) ";
+$query2 .=  "VALUES ('$id_studenta', '$id_predmetu')";
+$result = mysqli_query($connection, $query2);
+$hlaska .= "Předmět přidán". '<br>';
+echo "<li><a href='index.php'>Index</a></li><br>";
+echo "<li><a href='classes_to_get.php'>Přihlásit předmět</a></li>";
 
 ?>

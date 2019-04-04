@@ -21,7 +21,7 @@ die('Query FAILED' . mysqli_error($connection));
 }
 
 ?>
-
+<div style="background-color:green;">
 <h5>Tvoje předměty</h5>
 
 <?php
@@ -30,3 +30,4 @@ while($row = mysqli_fetch_array($result)) {
     echo $row[1] . '<br>';
 }
 ?>
+</div>

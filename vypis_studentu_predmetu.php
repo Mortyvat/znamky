@@ -12,7 +12,7 @@ die('Query FAILED' . mysqli_error($connection));
 }
 ?>
 
-
+<div style="background-color:blue;">
 <h5>Studenti příhlášení na předměty</h5> 
 
 <?php
@@ -27,3 +27,4 @@ while($row = mysqli_fetch_array($result)) {
 //$query = "SELECT users.username, classes.class, znamky.date, znamky.mark FROM `users`, znamky, classes WHERE  znamky.id_student= users.id and znamky.id_class = classes.id  ";
 
 ?>
+</div>

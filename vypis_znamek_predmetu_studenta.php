@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 $username = '';
 $username =  $_SESSION['login_user'];
 
@@ -21,7 +21,7 @@ die('Query FAILED' . mysqli_error($connection));
 }
 
 ?>
-
+<div style="background-color:yellow;">
 <h5>Tvoje známky</h5>
 
 <?php
@@ -30,3 +30,4 @@ while($row = mysqli_fetch_array($result)) {
     echo $row[2] . " ". $row[1] . ' známka ' . $row[3] . '<br>';
 }
 ?>
+</div>

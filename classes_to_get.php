@@ -1,7 +1,7 @@
 <?php include "db.php";?>
 <?php include "functions.php";?>
 
-<h3>Předměty k přihlášení</h3>
+
 
 <?php
 session_start();
@@ -13,7 +13,6 @@ if(!$result3){
 }
 $row3 = mysqli_fetch_array($result3);
 $_SESSION['student_id'] = $row3[0];
-echo "ID studenta " . $_SESSION['student_id']. "<br>";
 ?>
 
 
@@ -24,11 +23,17 @@ echo "ID studenta " . $_SESSION['student_id']. "<br>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<h3>Předměty k přihlášení</h3>
+<?php include "ovladaci panel.php" ?>
+    <br>
+    
     <form method="POST" action="prihlasit_predmet.php">
     <div class="form-group">
         <select name ="id" id="">
+            
         <?php
 
         $query = "SELECT * FROM classes";
@@ -59,6 +64,7 @@ echo "ID studenta " . $_SESSION['student_id']. "<br>";
         ?>
             </select>
             </div>
+            <br>
     <input type="submit" name="submit" value="Submit">
     <?php 
     //echo $id;

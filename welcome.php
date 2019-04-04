@@ -1,3 +1,4 @@
+<div style="background-color:red;">
 <?php
 
         if(isset($_SESSION['login_user'])){
@@ -19,4 +20,6 @@
 }
  
 ?>
+</div>
+
 

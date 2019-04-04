@@ -14,6 +14,7 @@
 <?php
 session_start();
 include "ovladaci panel.php";
+
 $username =  $_SESSION['login_user'];
 $id_predmetu = $_POST['id'];
 //echo $_POST['id'];

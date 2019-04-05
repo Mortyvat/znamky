@@ -2,6 +2,8 @@
 
 <?php
 include "header.php";
+include "db.php";
+include "functions.php";
 
 ?>
 
@@ -24,12 +26,20 @@ include "header.php";
         <?php
         include "prihlasovani.php";
         include "welcome.php";
-        include "ovladaci panel.php";
-        
+        if(isset($_SESSION['login_user'])){
+            
+        $query = "SELECT * FROM users WHERE username = '$username'";
+        $result = mysqli_query($connection, $query);
+        $row = mysqli_fetch_assoc($result);
+        if($row['access']==1){
+            include "ovladaci panel ucitel.php";
+        }   else{
+            include "ovladaci panel student.php";
+        }
 
         //if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             
-            if(isset($_SESSION['login_user'])){
+            
 
                 
                 $hlaska = "AHOJ ". $_SESSION['login_user'].'<br>';

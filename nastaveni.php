@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="style.css">
     </head>
 <body>
-
 <div class="container">
 <div class="col-sm-6">
 <h3>Vytvoreni noveho hesla</h3>
-
 <?php 
 include 'header.php';
 include 'ovladaci panel.php';?>
@@ -23,9 +21,7 @@ include 'ovladaci panel.php';?>
 <label for="username">Username</label>
 <input type="text" name="username" class="form-control">
 </div>
-<br>
-        
-
+<br>      
 <div class="form-group">
 <label for="password">Password</label>
 <input type="password" name= "password" class="form-control">
@@ -34,18 +30,13 @@ include 'ovladaci panel.php';?>
 <input class ="btn btn-primary" type="submit" name="login" value="Submit">
 </form>
 <br>
-<?php
-        
-        
-        if(!isset($_SESSION['login_user'])) {
-            header("location: index.php");
-        } 
+<?php 
+        include 'common.php';
+        notUser();
         echo $hlaska;
-        ?>
-        
+        ?>       
 </div>
-</div>
-    
+</div>   
 </body>
 </html>
         

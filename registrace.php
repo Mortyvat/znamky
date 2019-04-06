@@ -1,54 +1,29 @@
 <?php
 session_start();
-$hlaska = '<br>'.'Připojeno k databázi'. '<br>';
 if(isset($_POST['register'])){
     $username= $_POST['username'];
     $password= $_POST['password'];
     $password2 = $_POST['password2'];
-
     if(!($password==$password2)){
-        $hlaska .= 'Hesla se neshodují'. '<br>';
-
+        echo  'Hesla se neshodují'. '<br>';
     }
-    else
-    {
-        $hlaska .= "Hesla se shodují". '<br>';
-        $connection = mysqli_connect('localhost', 'root', '', 'databaze');
-
-        if($connection) {
-
-        } else {
-            $hlaska = 'Připojení k databázi selhalo';
-            die("Database connection failed");
+    include 'db.php';
+    $query2 = "SELECT * FROM users WHERE username ='$username' LIMIT 1";
+    $result2 = mysqli_query($connection, $query2);
+    if (mysqli_fetch_row($result2)) {
+        $hlaska .= "Přihlašovací jméno existuje". '<br>';
+    } else {
+            $access = $_POST['access'];
+            $query = "INSERT INTO users(username, password, access) ";
+            $query .=  "VALUES ('$username', '$password', '$access')";  
+            $result = mysqli_query($connection, $query);
+            if(!$result){
+            die('Query FAILED' . mysqli_error($connection));
+            
         }
-        $query2 = "SELECT * FROM users WHERE username ='$username' LIMIT 1";
-        $result2 = mysqli_query($connection, $query2);
-        if (mysqli_fetch_row($result2)) {
-            $hlaska .= "Přihlašovací jméno existuje". '<br>';
-        } else {
-                $access = $_POST['access'];
-                $query = "INSERT INTO users(username, password, access) ";
-                $query .=  "VALUES ('$username', '$password', '$access')";
-        
-                $result = mysqli_query($connection, $query);
-                $hlaska .= "Účet vytvořen". '<br>';
-                if(!$result){
-
-                die('Query FAILED' . mysqli_error($connection));
-                
-            }
-        
-        }
-        
-        
     }
-    
-}
-
+}   
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,20 +34,13 @@ if(isset($_POST['register'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
- 
-
- 
+<body> 
 <div class="container">
 <div class="col-sm-6">
-
 <ul>
             <li><a href="index.php">HOME</a></li>
 </ul>
-
 <h3>Registrace</h3> 
-
-
 <form action="registrace.php" method="post">
         <div class="form-group">
         <label for="username">Username</label>
@@ -94,24 +62,9 @@ if(isset($_POST['register'])){
         </div>
         </select>
         <input class ="btn btn-primary" type="submit" name="register" value="Submit">
-
-        
-          
-
     </form>
-        <?php 
-        echo $hlaska;
-
-        
-        ?>
-        
-
-
 </form>
-
 </div>
 </div>
-
-
 </body>
 </html>

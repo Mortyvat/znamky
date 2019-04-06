@@ -3,7 +3,7 @@
 <?php
 include "header.php";
 include "db.php";
-include "functions.php";
+//include "common.php";
 
 ?>
 
@@ -26,6 +26,7 @@ include "functions.php";
         <?php
         include "prihlasovani.php";
         include "welcome.php";
+
         if(isset($_SESSION['login_user'])){
             
         $query = "SELECT * FROM users WHERE username = '$username'";

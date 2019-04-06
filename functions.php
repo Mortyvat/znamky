@@ -1,6 +1,6 @@
 
 <?php
-
+/*
 function showAllusers() {
     global $connection;
     $query = "SELECT * FROM users";
@@ -79,6 +79,6 @@ function showSTUDENTSofclasses() {
 
 
 
-
+*/
 
 ?>

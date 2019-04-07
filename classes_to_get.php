@@ -2,7 +2,7 @@
 include "db.php";
 include "common.php";
 session_start();
-notLoggedIn();
+
 showUsersID();
 ?>
 <!DOCTYPE html>

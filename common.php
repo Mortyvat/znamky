@@ -2,14 +2,14 @@
 include 'db.php'; 
 
 //Vypíše všechny uživatele
-function showUsers() {
+/*function showUsers() {
     global $connection;
     $query = "SELECT * FROM users";
     $result = mysqli_query($connection, $query);
     if(!$result){
             die('Query FAILED' . mysqli_error());
     }
-}
+}*/
 
 //Vypíše všechny předměty
 function showClasses() {
@@ -270,7 +270,7 @@ function notUser(){
     } 
 }
 
-/* function Welcome(){
+function Welcome(){
     if(isset($_SESSION['login_user'])){
         $username = $_SESSION['login_user'];
         $query = "SELECT * FROM users WHERE username = '$username'";
@@ -289,5 +289,5 @@ function notUser(){
         }       
     }
 }
-*/
+
 ?>

@@ -2,10 +2,9 @@
 include "db.php";
 include "common.php";
 session_start();
-
+notLoggedIn();
 showUsersID();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +16,20 @@ showUsersID();
 </head>
 <body>
 <h3>Předměty k přihlášení</h3>
-<?php include "ovladaci panel ucitel.php" ?>
-    <br>
-    
-    <form method="POST" action="prihlasit_a_ucit_predmet.php">
+<?php include "ovladaci panel.php" ?>
+    <br>   
+    <form method="POST" action="prihlasit_predmet.php">
     <div class="form-group">
-        <select name ="id" id="">          
+        <select name ="id" id="">            
         <?php
-        showTeachingClasses();           
+        showMyClasses();          
         ?>
             </select>
             </div>
             <br>
-    <input type="submit" name="submit" value="Submit">   
+    <input type="submit" name="submit" value="Submit">
+    <?php 
+    ?>   
     </div>
     </form>
 </body>

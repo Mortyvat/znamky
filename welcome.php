@@ -1,6 +1,7 @@
 <div style="background-color:red;">
 <?php
 
+
         if(isset($_SESSION['login_user'])){
     $username = $_SESSION['login_user'];
     $query = "SELECT * FROM users WHERE username = '$username'";
@@ -18,7 +19,7 @@
         
     }       
 }
- 
+
 ?>
 </div>
 

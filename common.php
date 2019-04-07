@@ -2,14 +2,14 @@
 include 'db.php'; 
 
 //Vypíše všechny uživatele
-/*function showUsers() {
+function showUsers() {
     global $connection;
     $query = "SELECT * FROM users";
     $result = mysqli_query($connection, $query);
     if(!$result){
             die('Query FAILED' . mysqli_error());
     }
-}*/
+}
 
 //Vypíše všechny předměty
 function showClasses() {

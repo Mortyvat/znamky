@@ -1,3 +1,9 @@
+body{
+  background-color:#f4f4f4;
+  color:#b84646;
+  font-family: Helvetica, Arial;
+  
+    }
 ul {
     list-style-type: none;
     margin: 0;

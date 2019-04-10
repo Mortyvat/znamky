@@ -9,7 +9,7 @@ if(!$result4){
 }
 $row4 = mysqli_fetch_array($result4);
 $_SESSION['student_id'] = $row4[0];
-include "ovladaci panel ucitel.php";
+include "ovladaci_panel_ucitel.php";
 if(isset($_POST['submit'])){
     if(isset($_POST['znamka'])){
     $znamka = $_POST['znamka'];

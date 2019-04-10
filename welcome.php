@@ -1,4 +1,4 @@
-<div style="background-color:red;">
+<div class="welcome">
 <?php
 
 

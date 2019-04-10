@@ -13,7 +13,7 @@
 <?php include "functions.php";?>
 <?php
 session_start();
-include "ovladaci panel.php";
+include "ovladaci_panel_student.php";
 
 $username =  $_SESSION['login_user'];
 $id_predmetu = $_POST['id'];

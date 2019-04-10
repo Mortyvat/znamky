@@ -16,7 +16,7 @@ showUsersID();
 </head>
 <body>
 <h3>Předměty k přihlášení</h3>
-<?php include "ovladaci panel.php" ?>
+<?php include "ovladaci_panel_student.php" ?>
     <br>   
     <form method="POST" action="prihlasit_predmet.php">
     <div class="form-group">

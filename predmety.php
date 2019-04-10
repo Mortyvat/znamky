@@ -24,11 +24,13 @@ $_SESSION['student_id'] = $row3[0];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bubu.css">
 </head>
 <body>
+    
+<div class="container">
 <h3>Předměty</h3>
-    <?php include "ovladaci panel.php" ?>
+    <?php include "ovladaci_panel_student.php" ?>
     <br>
     <form method="POST" action="predmet.php">
     <div class="form-group">

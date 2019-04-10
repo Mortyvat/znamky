@@ -1,3 +1,4 @@
+
 <?php 
 
 $username = '';
@@ -21,7 +22,7 @@ die('Query FAILED' . mysqli_error($connection));
 }
 
 ?>
-<div style="background-color:yellow;">
+<div class="znamky">
 <h5>Tvoje známky</h5>
 
 <?php
@@ -31,3 +32,4 @@ while($row = mysqli_fetch_array($result)) {
 }
 ?>
 </div>
+

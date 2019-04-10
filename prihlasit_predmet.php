@@ -17,7 +17,7 @@
 <h3>Přihlašte si předmět</h3>
 <?php
 session_start();
-include "ovladaci panel.php";
+include "ovladaci_panel_student.php";
 $hlaska = '';
 $username =  $_SESSION['login_user'];
 $id_studenta = $_SESSION['student_id'];

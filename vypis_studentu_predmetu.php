@@ -1,3 +1,4 @@
+<div class="spoluzaci">
 <?php 
 $username = '';
 //$username =  $_SESSION['login_user'];
@@ -12,7 +13,6 @@ die('Query FAILED' . mysqli_error($connection));
 }
 ?>
 
-<div style="background-color:blue;">
 <h5>Studenti příhlášení na předměty</h5> 
 
 <?php

@@ -14,13 +14,13 @@ include "db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bubu.css">
 </head>
 <body>
  
 
 <div class="container">
-<div class="col-sm-6">
+
 
 
         <?php
@@ -33,9 +33,9 @@ include "db.php";
         $result = mysqli_query($connection, $query);
         $row = mysqli_fetch_assoc($result);
         if($row['access']==1){
-            include "ovladaci panel ucitel.php";
+            include "ovladaci_panel_ucitel.php";
         }   else{
-            include "ovladaci panel student.php";
+            include "ovladaci_panel_student.php";
         }
 
         //if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
@@ -55,7 +55,7 @@ include "db.php";
         echo "nope".implode(" ",$_SESSION);*/
 ?>
 
-</div>
+
 </div>
     
 </body>

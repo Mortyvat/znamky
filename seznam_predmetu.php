@@ -27,14 +27,16 @@ if(isset($_SESSION['login_user'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bubu.css">
 </head>
 <body>
-<h3>Předměty k přihlášení</h3>
-<?php include "ovladaci panel.php" ?>
+    
+<div class="container">
+<h2>Předměty k přihlášení</h2>
+<?php include "ovladaci_panel_student.php" ?>
     <br>   
     <form method="GET" action="predmetek.php">
-    <div class="form-group">
+    <div class="seznam_predmetu">
     <?php
     //Vypíše všechny předměty
 

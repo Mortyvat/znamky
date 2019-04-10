@@ -13,7 +13,7 @@
 <?php include "functions.php";?>
 <?php
 session_start();
-include "ovladaci panel ucitel.php";
+include "ovladaci_panel_ucitel.php";
 
 $id_predmetu = $_POST['id'];
 //echo $_POST['id'];

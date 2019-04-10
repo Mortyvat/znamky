@@ -3,7 +3,7 @@
 session_start();
 $id_predmetu = $_POST['id'];
 echo "<h3>$id_predmetu</h3>";
-include "ovladaci panel.php";
+include "ovladaci_panel_student.php";
 if(isset($_POST['submit'])){
     if(isset($_POST['znamka'])){
     $znamka = $_POST['znamka'];
